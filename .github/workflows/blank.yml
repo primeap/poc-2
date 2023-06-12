@@ -41,3 +41,16 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          REPO_OWNER="primeap"
+          REPO_NAME="poc-1"
+          BRANCH_NAME="THIS-IS-GREAT-BRANCH-NAME"
+          
+          response=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" \
+            "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/branches/$BRANCH_NAME")
+          
+          if [[ "$response" == *"\"message\":\"Branch not found\""* ]]; then
+            echo "Branch not found. Workflow terminated."
+            exit 1
+          else
+            echo "Branch exists"
+          fi
