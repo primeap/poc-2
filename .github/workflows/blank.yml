@@ -28,7 +28,7 @@ jobs:
       - name: Check Branch
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          echo "------------------> $GITHUB_TOKEN"
+         
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
@@ -39,3 +39,5 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          echo '=============== TOKEN =============='
+          echo $GITHUB_TOKEN
