@@ -60,11 +60,6 @@ jobs:
         
       - name: Clone Openapi repo
         continue-on-error: false
-        uses: actions/checkout@v2
-        with:
-          path: openapi
-          submodules: recursive
-          repository: MHEducation/openapi
         uses: actions/checkout@v3
         with:
           path: poc-1
