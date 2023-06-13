@@ -59,9 +59,19 @@ jobs:
           fi
         
       - name: Clone Openapi repo
+        continue-on-error: false
+        uses: actions/checkout@v2
+        with:
+          path: openapi
+          submodules: recursive
+          repository: MHEducation/openapi
         uses: actions/checkout@v3
         with:
           path: poc-1
           submodules: recursive
           repository: primeap/poc-1
           ref: abcd
+          
+      - name: Clone Openapi repo *******
+        run: echo Hello, world!?????????????????
+      
