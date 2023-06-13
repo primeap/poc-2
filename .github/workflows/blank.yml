@@ -57,3 +57,11 @@ jobs:
           else
             echo "Branch exists"
           fi
+        
+      - name: Clone Openapi repo
+        uses: actions/checkout@v3
+        with:
+          path: poc-1
+          submodules: recursive
+          repository: primeap/poc-1
+          ref: abcd
